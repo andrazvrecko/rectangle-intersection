@@ -42,14 +42,14 @@ def getInput(val):
 if __name__ == '__main__':
     r1 = False
     while(r1 == False):
-        print("Enter coordinates for the lower left and upper right point of the FIRST Rectangle in this format; '(x1,y1) (x2,y2)':")
+        print("Enter coordinates for the lower left and upper right point of the FIRST Rectangle in this format; (x1,y1) (x2,y2):")
         i1 = input()
         r1 = getInput(i1)
 
     r2 = False
     while (r2 == False):
         print(
-            "Enter coordinates for the lower left and upper right point of the SECOND Rectangle in this format; '(x1,y1) (x2,y2)':")
+            "Enter coordinates for the lower left and upper right point of the SECOND Rectangle in this format; (x1,y1) (x2,y2):")
         i2 = input()
         r2 = getInput(i2)
 
