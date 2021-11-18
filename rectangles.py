@@ -7,10 +7,12 @@ class Point:
 
 class Rectangle:
     def __init__(self, p1, p2):
-        if p1.x > p2.x or p1.y > p1.y:
+        if p1.x < p2.x and p1.y < p2.y:
+            self.p1 = p1
+            self.p2 = p2
+        else:
             raise ValueError('invalid coordinates')
-        self.p1 = p1
-        self.p2 = p2
+
 
     def intersection(self, other):
         #Check rect is above/bellow or to the left/right of other
@@ -24,7 +26,7 @@ class Rectangle:
 def getInput(val):
     try:
         r1 = literal_eval(re.sub('(\))(\s+)(\()','\g<1>,\g<3>', val))
-        rect = Rectangle(Point(r1[0][0], r1[0][1]), Point(r1[1][0], r1[1][1]))
+        rect = Rectangle(Point(float(r1[0][0]), float(r1[0][1])), Point(float(r1[1][0]), float(r1[1][1])))
     except ValueError:
         print("Second coordinate must have higher values than the first!")
         print("Please enter the coordinates in the format mentioned")
